@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { CounterContext } from '../App';
 import Child from './Child';
 
 const Parent = () => {
-    const [count, setCount] = useState(0);
+    const { count } = useContext(CounterContext);
     return (
         <div>
             <h1 className='font-bold text-2xl'>Count: {count}</h1>
-            <Child count={count} setCount={setCount} />
+            <Child />
         </div>
     );
 };
