@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Child = () => {
-    const [count, setCount] = useState(0);
+const Child = ({ count, setCount }) => {
+
 
     return (
         <div>
