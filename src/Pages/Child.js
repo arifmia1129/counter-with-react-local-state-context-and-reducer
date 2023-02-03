@@ -5,9 +5,9 @@ const Child = () => {
 
     const reducer = (state, action) => {
         if (action.type === "INCREMENT") {
-            return state + 1;
+            return state + action.payload.count;
         } else if (action.type === "DECREMENT") {
-            return state - 1;
+            return state - action.payload.count;
         }
     }
 
@@ -17,8 +17,8 @@ const Child = () => {
         <div>
             <h1 className='font-bold text-2xl'>Count: {state}</h1>
             <div>
-                <button onClick={() => dispatch({ type: "DECREMENT" })} className='bg-red-500 p-2 rounded-lg text-white m-5'>Decrement</button>
-                <button onClick={() => dispatch({ type: "INCREMENT" })} className='bg-green-500 p-2 rounded-lg text-white m-5'>Increment</button>
+                <button onClick={() => dispatch({ type: "DECREMENT", payload: { count: 5 } })} className='bg-red-500 p-2 rounded-lg text-white m-5'>Decrement</button>
+                <button onClick={() => dispatch({ type: "INCREMENT", payload: { count: 5 } })} className='bg-green-500 p-2 rounded-lg text-white m-5'>Increment</button>
             </div>
         </div >
     );
