@@ -12,7 +12,8 @@ function App() {
   return (
     <CounterContext.Provider value={value}>
       <div className="App">
-        <Parent />
+        {/* <Parent /> */}
+        <Child />
       </div>
     </CounterContext.Provider>
   );
